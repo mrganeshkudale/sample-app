@@ -47,8 +47,8 @@ pipeline {
 					
 					    GIT_TAG_NAME = gitTagName()
     					    GIT_TAG_MESSAGE = gitTagMessage()
-						sh "echo ${GIT_TAG_NAME}"
-						sh "echo ${GIT_TAG_MESSAGE}"
+						sh "echo TAG NAME is : ${GIT_TAG_NAME}"
+						sh "echo TAG MESSAGE is : ${GIT_TAG_MESSAGE}"
 				}
 			}
 		}
