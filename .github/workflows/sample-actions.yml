@@ -2,13 +2,14 @@ on: [push]
 
 jobs:
   build-and-deploy:
-    runs-on: docker.io/nginx:latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
-   
+  
     - uses: Azure/k8s-deploy@v1.4
       with:
+        namespace: 'dev'
         manifests: |
-          dev.yml
-        images: |
-          'tntaksreg.azurecr.io/sample:latest'
+            dev.yaml
+        images: 'tntaksreg.azurecr.io/sample:latest'
+        kubectl-version: 'latest'
