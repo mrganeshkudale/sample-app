@@ -5,18 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
-    
-    - uses: azure/k8s-set-context@v1
-      with:
-        method: service-account
-        k8s-url: https://atos-tra-pla-cluster-dns-d22f6440.hcp.eastus.azmk8s.io:443
-        k8s-secret: sample-deploy-token-r4jqw
-      id: sample-deploy
   
     - uses: Azure/k8s-deploy@v1.4
       with:
         namespace: 'dev'
         manifests: |
             dev.yaml
-        images: 'tntaksreg.azurecr.io/sample:latest'
-        kubectl-version: 'latest'
