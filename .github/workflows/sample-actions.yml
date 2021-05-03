@@ -5,6 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+        method: service-account
+        k8s-url: https://atos-tra-pla-cluster-dns-d22f6440.hcp.eastus.azmk8s.io:443
+        k8s-secret: eyJhbGciOiJSUzI1NiIsImtpZCI6IlowWEFCMjlia3lsQXVIWURYWXBoRTk5NG1Ucnk5eVlSZXdFeTNmeWpjd0kifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4tZGZ3emciLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjA4YTQyODcyLTRjODUtNDA3My1hMTIxLTRkZTk1MjQwY2JkMCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.g_Qua309cnKPDuw8zGjdmDACbfRuq3SsFBQki1sWhKrTUFr7MGOFqh_JAY61R_COK1fMeru7SL5MfQ2JvA0Aqmo5LYQakzkhIyUxTZwPqUd1Gl8VXG-pKGRzepI4QvOXTlMQV6-B7SZ8Q3bMlHdUOdrh_M-l5UqWv7RcEKskN0Gwly1zdE3UqrjL_YuVSrhJnFZqvlJ2VmeC05ZAtB3H3lruWZFQ2_AubOrh8rG7P0IUwUQJ3CHeTXSMYheLyuwIAcuE1faxC53WnXYThLaFIpPiID5WOzf2-6dFadW7wprO71aRQXz4q9W8Ke9ea7pfgyUL6cN6kuSIlxg4cXCLmYsFnjEWsZXV0oX8OWmt95A21j67w1opsIw11ACQeKmgynv2Gs_BgS2MDaWNL0PQZYnbAqBSGE1iWYLl45k4n_sId1rV0KXzfDLf-R6SjgQ5xQmDKL4FsTOUjXJ5BEbEe29qtg5f0kS3-W4Y1mpa-IZI6RO4oCjErVXbF9J5w4qGbtVSsXxR_xYc_l1n0MGU2WX-uZSmwCJL63P8OE2qjqmh1jA4C5rD-st4UtiUxv9mDBUZF5ezptMei1LIwNTOJDwb3UqLFYw7bG8TTs9yHJTX6llUtUIODqmucuEj1o2gyQ0w3SVi6Pe6ZkZ-5pRKZZwSwy1hbAbwXN_bY7e5BVA
+      id: setcontext
   
     - uses: Azure/k8s-deploy@v1.4
       with:
