@@ -10,7 +10,7 @@ jobs:
       with:
         method: service-account
         k8s-url: https://atos-tra-pla-cluster-dns-d22f6440.hcp.eastus.azmk8s.io:443
-        k8s-secret: sample-deploy-secret
+        k8s-secret: sample-deploy-token-r4jqw
       id: sample-deploy
   
     - uses: Azure/k8s-deploy@v1.4
