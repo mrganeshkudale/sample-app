@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "atostraplacluster-d9de"
+    labels:
+        app: "atostraplacluster-d9de"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: dev-atostraplacluster-d9de.e46708b92c054086909b.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "atostraplacluster-d9de"
+                servicePort: 80
