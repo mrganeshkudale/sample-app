@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "atostraplacluster-d9de"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "atostraplacluster-d9de"
+  template:
+    metadata:
+      labels:
+        app: "atostraplacluster-d9de"
+    spec:
+      containers:
+        - name: "atostraplacluster-d9de"
+          image: "tntaksreg.azurecr.io/atostraplacluster"
+          ports:
+          - containerPort: 80
