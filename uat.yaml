@@ -36,7 +36,7 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: sample-ingress
-  namespace: dev
+  namespace: uat
   annotations:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
