@@ -31,4 +31,19 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: sample-ingress
+  namespace: dev
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: sample-service
+          servicePort: 80
+        path: /
