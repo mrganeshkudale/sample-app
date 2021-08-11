@@ -46,7 +46,7 @@ spec:
       paths:
       - backend:
           service:
-            name: test
+            name: sample-service
             port:
               number: 80
         path: /
