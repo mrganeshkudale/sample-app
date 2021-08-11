@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: sample-deployment
-  replicas: 100
+  replicas: 2
   template:
     metadata:
       labels:
