@@ -15,7 +15,7 @@ pipeline {
 		stage('Azure Cloud Connect'){
 			steps {
 				sh "az login --identity"
-				sh "az account set --subscription xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+				sh "az account set --subscription aafef7b4-6886-45b4-afeb-2556fc54b425"
 				sh "az aks get-credentials --resource-group atos-tra-pla-rg --name atos-tra-pla-cluster"			
 			}
 		}
