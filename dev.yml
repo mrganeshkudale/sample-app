@@ -41,8 +41,7 @@ metadata:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-  - host: sample.e46708b92c054086909b.eastus.aksapp.io
-    http:
+  - http:
       paths:
       - backend:
           service:
