@@ -45,6 +45,8 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: sample-service
-          servicePort: 80
+          service:
+            name: test
+            port:
+              number: 80
         path: /
