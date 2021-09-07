@@ -18,6 +18,11 @@ spec:
       - name: pods-sample-deployment
         image: tntaksreg.azurecr.io/sample:latest
         imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 200m
+          limits:
+            cpu: 300m
 ---
 apiVersion: v1
 kind: Service
